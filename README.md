@@ -61,11 +61,20 @@ BloomBreak 1.1.0 — Initial production release.
 
 ## Screenshots
 
+### Main Interface
+![BloomBreak Main Interface](screenshots/main.png)
 
+### Plants and Themes
+![Plants and Themes](screenshots/plants-and-themes.png)
 
-## Acknowledgements
+### Plant Growth
+![Plant Growth](screenshots/growth.png)
 
-Thank you to everyone who contributed feedback and testing during BloomBreak's development.
+### Timer Settings
+![Timer Settings](screenshots/timer-settings.png)
+
+### Productivity Statistics
+![Statistics](screenshots/statistics.png)
 
 ## License
 
