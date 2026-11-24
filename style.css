@@ -754,24 +754,6 @@ select:focus-visible {
     font-variant-numeric: tabular-nums;
 }
 
-.beta-badge {
-    display: inline-block;
-
-    padding: 1px 6px;
-    margin-left: 4px;
-
-    background: var(--secondary-background);
-    border: 1px solid var(--border-color);
-    border-radius: 999px;
-
-    color: var(--secondary-text);
-    font-size: 10px;
-    font-weight: 600;
-    letter-spacing: 1px;
-    vertical-align: middle;
-}
-
-
 /* Compact spacing so the garden fits on every screen */
 
 .screen .app-name {
