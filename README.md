@@ -82,4 +82,4 @@ Special thanks to [@aklerza](https://github.com/aklerza) for his contributions t
 
 ## License
 
-License information will be added soon.
+This project is licensed under the ISC License. See the [LICENSE](LICENSE) file for details.
