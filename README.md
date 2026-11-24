@@ -14,7 +14,7 @@ Combining customizable work and break timers with an interactive virtual garden,
 - **Interactive virtual plants** — Water plants and watch them grow through different stages.
 - **Plant vitality** — Maintain your plant's vitality through regular interaction.
 - **Multiple plants** — Choose from different plant types.
-- **Customizable themes** — Personalize the application's appearance.
+- **Customizable themes** — Switch between available application themes.
 - **Desktop notifications** — Receive notifications when work or break sessions end.
 - **System tray integration** — Keep BloomBreak running in the background.
 - **Windows startup option** — Configure the application to launch when Windows starts.
