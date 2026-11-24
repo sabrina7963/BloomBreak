@@ -76,6 +76,10 @@ BloomBreak 1.1.0 — Initial production release.
 ### Productivity Statistics
 ![Statistics](screenshots/statistics.png)
 
+## Acknowledgements
+
+Special thanks to [@aklerza](https://github.com/aklerza) for his contributions to BloomBreak's testing and development.
+
 ## License
 
 License information will be added soon.
