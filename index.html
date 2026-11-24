@@ -1,0 +1,480 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta
+        http-equiv="Content-Security-Policy"
+        content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; base-uri 'none'; form-action 'none'"
+    >
+    <title>BloomBreak</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="plant-app">
+
+        <!-- Shared pixel garden (moved into the active screen) -->
+        <div id="garden" class="garden">
+            <canvas class="garden-canvas" aria-label="Your garden"></canvas>
+
+            <div class="garden-info">
+                <p class="garden-title">Oak · Seed</p>
+
+                <div class="garden-meters">
+                    <div class="meter" title="Growth: total focused work for this plant">
+                        <span class="meter-name">Growth</span>
+                        <span class="meter-track"><span class="meter-fill growth-bar"></span></span>
+                        <span class="meter-value growth-value">0%</span>
+                    </div>
+
+                    <div class="meter" title="Vitality: rises while you work, fades while you don't">
+                        <span class="meter-name">Vitality</span>
+                        <span class="meter-track"><span class="meter-fill vitality-bar"></span></span>
+                        <span class="meter-value vitality-value">0%</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Screen 1: Welcome -->
+        <section id="welcome-screen" class="screen active">
+            <p class="app-name">BloomBreak <span class="beta-badge">BETA</span></p>
+            <div class="garden-slot"></div>
+
+            <h2 id="welcome-title">Welcome to BloomBreak!</h2>
+            <p id="welcome-description" class="description">
+                Focus to help your plant grow. A little pause helps you bloom.
+            </p>
+
+            <button type="button" id="new-seed-button" class="primary-button" hidden>
+                Plant a new seed 🌱
+            </button>
+
+            <button type="button" id="start-button" class="primary-button">
+                Start Work
+            </button>
+
+            <div class="button-row">
+                <button type="button" id="stats-button" class="secondary-button">
+                    Stats
+                </button>
+
+                <button type="button" id="welcome-settings-button" class="secondary-button">
+                    Settings
+                </button>
+            </div>
+        </section>
+
+
+        <!-- Screen 2: Work -->
+        <section id="work-screen" class="screen">
+            <p class="app-name">BloomBreak</p>
+            <div class="garden-slot"></div>
+
+            <h2>Time to focus</h2>
+            <p class="description">
+                Every focused minute helps your plant grow.
+            </p>
+
+            <p id="work-countdown" class="timer">20:00</p>
+            <p class="time-label">until your next break</p>
+
+            <button type="button" id="work-settings-button" class="secondary-button">
+                Settings
+            </button>
+
+            <button type="button" class="end-button">
+                End session
+            </button>
+
+            <button type="button" class="pause-button">
+                Pause
+            </button>
+        </section>
+
+
+        <!-- Screen 3: Water -->
+        <section id="water-screen" class="screen">
+            <p class="app-name">BloomBreak</p>
+            <div class="garden-slot"></div>
+
+            <h2>Your plant needs water!</h2>
+            <p class="description">
+                You've worked hard. Time to take a little break.
+            </p>
+
+            <button type="button" id="water-button" class="primary-button">
+                Water your plant 💧
+            </button>
+        </section>
+
+
+        <!-- Screen 4: Approval -->
+        <section id="approval-screen" class="screen">
+
+            <div class="garden-slot"></div>
+
+            <h2>Ready to get back to work?</h2>
+
+            <p class="description">
+                Your break is over! Your plant is refreshed and ready to grow.
+            </p>
+
+            <button type="button" id="back-to-work-button" class="primary-button">
+                Back to Work
+            </button>
+
+            <button type="button" id="extend-break-button" class="secondary-button">
+                Extend Break
+            </button>
+
+        </section>
+
+
+        <!-- Screen 5: Extend Break -->
+        <section id="extend-break-screen" class="screen">
+
+            <p class="app-name">BloomBreak</p>
+
+            <div class="garden-slot"></div>
+
+            <h2>Extend your break</h2>
+
+            <p class="description">
+                Need a little more time? Choose how much longer you'd like to relax.
+            </p>
+
+            <div class="setting">
+                <label for="extend-duration">
+                    Additional break duration
+                </label>
+
+                <div class="duration-input">
+
+                    <input
+                        type="number"
+                        id="extend-duration"
+                        min="1"
+                        step="1"
+                        value="5"
+                    >
+
+                    <select id="extend-unit">
+                        <option value="seconds">Seconds</option>
+                        <option value="minutes" selected>Minutes</option>
+                        <option value="hours">Hours</option>
+                    </select>
+
+                </div>
+            </div>
+
+            <button type="button" id="extend-save-button" class="primary-button">
+                Save
+            </button>
+
+            <button type="button" id="extend-back-button" class="secondary-button">
+                Back
+            </button>
+
+        </section>
+
+
+        <!-- Screen 6: Break -->
+        <section id="break-screen" class="screen">
+            <p class="app-name">BloomBreak</p>
+            <div class="garden-slot"></div>
+
+            <h2>Break time!</h2>
+            <p class="description">
+                Your plant is being watered. Now it's your turn to rest.
+            </p>
+
+            <p id="break-countdown" class="timer">05:00</p>
+            <p class="time-label">enjoy your little pause</p>
+
+            <button type="button" id="break-settings-button" class="secondary-button">
+                Settings
+            </button>
+
+            <button type="button" class="end-button">
+                End session
+            </button>
+
+            <button type="button" class="pause-button">
+                Pause
+            </button>
+        </section>
+
+
+        <!-- Screen 7: Settings -->
+        <section id="settings-screen" class="screen">
+
+            <p class="app-name">BloomBreak</p>
+
+            <h2>Settings</h2>
+            <p class="description">
+                Customize your work and break routine.
+            </p>
+
+            <!-- Work Duration -->
+            <div class="setting">
+                <label for="work-duration">
+                    Work duration
+                </label>
+
+                <div class="duration-input">
+                    <input
+                        type="number"
+                        id="work-duration"
+                        min="1"
+                        step="1"
+                        value="20"
+                    >
+
+                    <select id="work-unit">
+                        <option value="seconds">Seconds</option>
+                        <option value="minutes" selected>Minutes</option>
+                        <option value="hours">Hours</option>
+                    </select>
+                </div>
+
+                <p class="theme-description">Up to 12 hours.</p>
+            </div>
+
+
+            <!-- Break Duration -->
+            <div class="setting">
+                <label for="break-duration">
+                    Break duration
+                </label>
+
+                <div class="duration-input">
+                    <input
+                        type="number"
+                        id="break-duration"
+                        min="1"
+                        step="1"
+                        value="5"
+                    >
+
+                    <select id="break-unit">
+                        <option value="seconds">Seconds</option>
+                        <option value="minutes" selected>Minutes</option>
+                        <option value="hours">Hours</option>
+                    </select>
+                </div>
+
+                <p class="theme-description">Up to 4 hours.</p>
+            </div>
+
+
+            <!-- Plant Classification -->
+            <div class="setting">
+                <label for="plant-type">
+                    Plant type
+                </label>
+
+                <p class="theme-description">
+                    Your plant keeps its growth when you switch species.
+                </p>
+
+                <div class="duration-input">
+                    <select id="plant-type">
+                        <option value="oak" selected>🌳 Oak</option>
+                        <option value="pine">🌲 Pine</option>
+                        <option value="sakura">🌸 Sakura</option>
+                        <option value="linden">🌳 Linden</option>
+                        <option value="cactus">🌵 Cactus</option>
+                        <option value="palm">🌴 Palm</option>
+                        <option value="jungle">🌿 Rainforest</option>
+                    </select>
+                </div>
+            </div>
+
+
+            <!-- Notification Sound -->
+            <div class="setting startup-setting">
+
+                <label for="sound-toggle">
+                    Sound
+                </label>
+
+                <div class="startup-option">
+                    <label for="sound-toggle">
+                        Play a chime when a timer ends
+                    </label>
+
+                    <input
+                        type="checkbox"
+                        id="sound-toggle"
+                        checked
+                    >
+                </div>
+
+            </div>
+
+
+            <!-- UI Theme Customization -->
+            <div class="setting theme-setting">
+
+                <label>UI Theme</label>
+
+                <p class="theme-description">
+                    Choose a color palette for your BloomBreak experience.
+                </p>
+
+                <div class="theme-options">
+
+                    <button type="button" class="theme-option"
+                        data-theme="green" aria-pressed="false">
+                        <span class="theme-preview green-gradient"></span>
+                        <span class="theme-name">Sage Garden</span>
+                    </button>
+
+                    <button type="button" class="theme-option"
+                        data-theme="rose" aria-pressed="false">
+                        <span class="theme-preview rose-gradient"></span>
+                        <span class="theme-name">Rose Garden</span>
+                    </button>
+
+                    <button type="button" class="theme-option"
+                        data-theme="blue" aria-pressed="false">
+                        <span class="theme-preview blue-gradient"></span>
+                        <span class="theme-name">Ocean Breeze</span>
+                    </button>
+
+                    <button type="button" class="theme-option"
+                        data-theme="yellow" aria-pressed="false">
+                        <span class="theme-preview yellow-gradient"></span>
+                        <span class="theme-name">Golden Hour</span>
+                    </button>
+
+                    <button type="button" class="theme-option"
+                        data-theme="orange" aria-pressed="false">
+                        <span class="theme-preview orange-gradient"></span>
+                        <span class="theme-name">Peach Blossom</span>
+                    </button>
+
+                    <button type="button" class="theme-option"
+                        data-theme="purple" aria-pressed="false">
+                        <span class="theme-preview purple-gradient"></span>
+                        <span class="theme-name">Lavender Dream</span>
+                    </button>
+
+                    <button type="button" class="theme-option"
+                        data-theme="pink" aria-pressed="false">
+                        <span class="theme-preview pink-gradient"></span>
+                        <span class="theme-name">Pink Paradise</span>
+                    </button>
+
+                </div>
+
+                <div id="custom-theme-options" class="theme-options"></div>
+
+                <p class="theme-description">
+                    Add your own themes as JSON files in the themes folder.
+                </p>
+
+                <button type="button" id="open-themes-button" class="secondary-button small-button">
+                    Open themes folder
+                </button>
+            </div>
+
+            <!-- Windows Startup Setting -->
+            <div class="setting startup-setting">
+
+                <label for="startup-toggle">
+                    Launch at Windows startup
+                </label>
+
+                <p class="theme-description">
+                    Automatically open BloomBreak when you sign in to Windows.
+                </p>
+
+                <div class="startup-option">
+                    <label for="startup-toggle">
+                        Enable automatic startup
+                    </label>
+
+                    <input
+                        type="checkbox"
+                        id="startup-toggle"
+                        checked
+                    >
+                </div>
+
+            </div>
+
+            <!-- Settings Actions -->
+            <button type="button" id="save-button" class="primary-button">
+                Save Settings
+            </button>
+
+            <button type="button" id="back-button" class="secondary-button">
+                Back
+            </button>
+
+            <p id="app-version" class="version-label"></p>
+
+        </section>
+
+
+        <!-- Screen 8: Stats -->
+        <section id="stats-screen" class="screen">
+
+            <p class="app-name">BloomBreak</p>
+
+            <h2>Your progress</h2>
+
+            <div class="stats-cards">
+                <div class="stats-card">
+                    <span class="stats-value" id="stat-today">0m</span>
+                    <span class="stats-label">Today</span>
+                </div>
+
+                <div class="stats-card">
+                    <span class="stats-value" id="stat-week">0m</span>
+                    <span class="stats-label">Last 7 days</span>
+                </div>
+
+                <div class="stats-card">
+                    <span class="stats-value" id="stat-streak">0 days</span>
+                    <span class="stats-label">Streak</span>
+                </div>
+
+                <div class="stats-card">
+                    <span class="stats-value" id="stat-total">0m</span>
+                    <span class="stats-label">All time</span>
+                </div>
+            </div>
+
+            <div class="stats-ranges">
+                <button type="button" class="stats-range" data-range="days" aria-pressed="true">Days</button>
+                <button type="button" class="stats-range" data-range="weeks" aria-pressed="false">Weeks</button>
+            </div>
+
+            <svg id="stats-chart" class="stats-chart" role="img" aria-label="Focus time chart"></svg>
+
+            <p class="stats-heading">Grown plants <span id="stats-collection-count">(0)</span></p>
+            <div id="stats-collection" class="stats-collection"></div>
+
+            <button type="button" id="stats-back-button" class="secondary-button">
+                Back
+            </button>
+
+        </section>
+
+    </div>
+
+    <script src="sprites.js"></script>
+    <script src="garden.js"></script>
+    <script src="stats.js"></script>
+    <script src="script.js"></script>
+    <script src="debug.js"></script>
+</body>
+
+</html>
