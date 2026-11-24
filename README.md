@@ -57,24 +57,33 @@ Run the installer and follow the installation instructions.
 
 ## Project status
 
-BloomBreak 1.1.0 — Initial production release.
+BloomBreak 1.1.1 — Production release
 
 ## Screenshots
 
 ### Main Interface
-![BloomBreak Main Interface](screenshots/main.png)
+![BloomBreak Main Interface](screenshots/main-screen.png)
 
-### Plants and Themes
-![Plants and Themes](screenshots/plants-and-themes.png)
+### Work Screen
+![Work Screen](screenshots/work-screen.png)
+
+### Break Screen
+![Break Screen](screenshots/break-screen.png)
+
+### Water Screen
+![Water Screen](screenshots/water-screen.png)
 
 ### Plant Growth
 ![Plant Growth](screenshots/growth.png)
 
-### Timer Settings
-![Timer Settings](screenshots/timer-settings.png)
+### Plants and Themes
+![Plants and Themes](screenshots/plants-and-themes.png)
 
 ### Productivity Statistics
 ![Statistics](screenshots/statistics.png)
+
+### Timer Settings
+![Timer Settings](screenshots/timer-settings.png)
 
 ## Acknowledgements
 
