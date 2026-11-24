@@ -4,9 +4,9 @@ A friendly desktop break reminder with virtual plants.
 
 ## About
 
-BloomBreak is a Windows desktop productivity application designed to make taking regular breaks during focused work more enjoyable.
+BloomBreak is a Windows desktop productivity application that encourages users to take regular breaks during focused work.
 
-It combines customizable work and break timers with an interactive virtual garden, encouraging users to maintain a healthy balance between productivity and rest.
+Combining customizable work and break timers with an interactive virtual garden, BloomBreak turns taking breaks into a small, rewarding experience. Users can water their plants, maintain their vitality, and watch them grow while building healthier work habits.
 
 ## Features
 
@@ -34,7 +34,7 @@ It combines customizable work and break timers with an interactive virtual garde
 
 ### Download the application
 
-Download the latest Windows installer from the [Releases](https://github.com/YOUR-GITHUB-USERNAME/BloomBreak/releases) page.
+Download the latest Windows installer from the [Releases](https://github.com/sabrina7963/BloomBreak/releases) page.
 
 Run the installer and follow the installation instructions.
 
@@ -61,7 +61,7 @@ BloomBreak 1.1.0 — Initial production release.
 
 ## Screenshots
 
-Screenshots of the application will be added here.
+
 
 ## Acknowledgements
 
@@ -69,4 +69,4 @@ Thank you to everyone who contributed feedback and testing during BloomBreak's d
 
 ## License
 
-See the repository's LICENSE file.
+License information will be added soon.
